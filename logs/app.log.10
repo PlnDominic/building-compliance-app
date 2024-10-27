@@ -1,0 +1,110 @@
+2024-10-21 13:51:44,877 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 13:51:46,208 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:00:36,868 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:00:38,110 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:24:48,760 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:24:51,355 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:26:07,264 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:26:09,275 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:35:36,800 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 14:35:39,391 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 15:17:30,049 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 15:17:31,354 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 16:16:00,189 INFO: Plot updated successfully: 6 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:249]
+2024-10-21 16:18:01,024 ERROR: Error in create_plot: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "uq_plots_plot_number"
+DETAIL:  Key (plot_number)=(3) already exists.
+
+[SQL: INSERT INTO plots (plot_number, owner_name, address, area_sqm, compliance_status, image_path, land_use, development_status, additional_info, geom) VALUES (%(plot_number)s, %(owner_name)s, %(address)s, %(area_sqm)s, %(compliance_status)s, %(image_path)s, %(land_use)s, %(development_status)s, %(additional_info)s, ST_GeomFromEWKT(%(geom)s)) RETURNING plots.id]
+[parameters: {'plot_number': '3', 'owner_name': 'Arthur Junior', 'address': 'Degede', 'area_sqm': 4.0, 'compliance_status': 'compliant', 'image_path': 'C:\\Users\\KING EBEN\\Desktop\\building-compliance-app\\uploads\\plot_1.jpeg', 'land_use': 'Church', 'development_status': 'Undeveloped', 'additional_info': '', 'geom': 'SRID=4326;POLYGON ((-2.306366 6.437564, -2.305508 6.437701, -2.305448 6.43707, -2.306255 6.436959, -2.306255 6.436959, -2.306263 6.436968, -2.306366 6.437564))'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:208]
+Traceback (most recent call last):
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "uq_plots_plot_number"
+DETAIL:  Key (plot_number)=(3) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KING EBEN\Desktop\building-compliance-app\app.py", line 203, in create_plot
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 3298, in flush
+    self._flush(objects)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 3438, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\session.py", line 3398, in _flush
+    flush_context.execute()
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "uq_plots_plot_number"
+DETAIL:  Key (plot_number)=(3) already exists.
+
+[SQL: INSERT INTO plots (plot_number, owner_name, address, area_sqm, compliance_status, image_path, land_use, development_status, additional_info, geom) VALUES (%(plot_number)s, %(owner_name)s, %(address)s, %(area_sqm)s, %(compliance_status)s, %(image_path)s, %(land_use)s, %(development_status)s, %(additional_info)s, ST_GeomFromEWKT(%(geom)s)) RETURNING plots.id]
+[parameters: {'plot_number': '3', 'owner_name': 'Arthur Junior', 'address': 'Degede', 'area_sqm': 4.0, 'compliance_status': 'compliant', 'image_path': 'C:\\Users\\KING EBEN\\Desktop\\building-compliance-app\\uploads\\plot_1.jpeg', 'land_use': 'Church', 'development_status': 'Undeveloped', 'additional_info': '', 'geom': 'SRID=4326;POLYGON ((-2.306366 6.437564, -2.305508 6.437701, -2.305448 6.43707, -2.306255 6.436959, -2.306255 6.436959, -2.306263 6.436968, -2.306366 6.437564))'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2024-10-21 17:28:34,453 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:33:47,551 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:35:41,236 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:35:42,463 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:39:31,163 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:54:16,014 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-21 17:54:17,244 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-22 15:50:21,947 INFO: Plot updated successfully: 7 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:249]
+2024-10-22 16:06:58,496 INFO: Plot updated successfully: 7 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:249]
+2024-10-23 10:07:03,278 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:07:04,633 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:27:56,875 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:27:58,357 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:33:54,139 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:46:07,152 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:46:16,469 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:47:43,356 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:48:21,845 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 10:59:09,360 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 11:47:00,093 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:32]
+2024-10-23 11:47:00,183 WARNING:  * Debugger is active! [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:00,185 INFO:  * Debugger PIN: 282-039-550 [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:00,254 INFO:  * Running on http://127.0.0.1:5001/ (Press CTRL+C to quit) [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:01,366 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:01] "GET / HTTP/1.1" 200 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:03,253 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:03] "[36mGET /static/img/1.jpg HTTP/1.1[0m" 304 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:03,253 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:03,318 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:03,347 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:03] "GET /locations HTTP/1.1" 200 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:03,358 INFO: 127.0.0.1 - - [23/Oct/2024 11:47:03] "[35m[1mGET /bibiani_layout HTTP/1.1[0m" 500 - [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]
+2024-10-23 11:47:22,001 INFO:  * Detected change in 'C:\\Users\\KING EBEN\\Desktop\\building-compliance-app\\app.py', reloading [in C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\werkzeug\_internal.py:225]

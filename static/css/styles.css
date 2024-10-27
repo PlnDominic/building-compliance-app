@@ -1,0 +1,380 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif; /* Changed font to Georgia */
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar-logo{
+padding-top: 3px;
+width: 40px; /* Adjusted width to fit perfectly in the navbar */
+height: 40px; /* Maintain aspect ratio */
+padding-bottom: 3px;
+margin-left: 10px;
+}
+
+
+.navbar-brand{
+color:#ffffff;
+font-size:12px:
+}
+
+
+
+.navbar-links{
+    color:#ffffff;
+    padding: 7px;
+    padding-left: 20px;
+}
+
+.navbar-links{
+    background-color: rgb(0, 1, 32);
+    border: 2px solid transparent; /* Sets border thickness to 2px and makes it transparent */
+    background-clip: padding-box; /* Ensures the border is outside the padding */
+    border-image: linear-gradient(135deg, blue, red); /* Sets a blue to red gradient for the border */
+    border-image-slice: 1; /* Ensures the gradient covers the entire border */
+    color: #ffffff;
+    transition: color 0.3s ease;
+    font-size: 12px;    
+}
+
+.navbar-links a {
+    margin-right: 20px; /* Space between each link */
+    color: #ffffff; /* White color for each link */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.navbar-links a:hover {
+    color: #c30303;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 3px; /* Reduced padding for the navbar */
+    font-size: 14px; /* Decreased font size for navbar items */
+    background-color: rgb(0, 1, 32); /* Semi-transparent black background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px; /* Fixed height for navbar */
+    z-index: 10; /* Ensures navbar is above the map */
+}
+
+/* Container for Map and Sidebar */
+#container {
+    display: flex;
+    height: calc(100vh - 40px); /* Full height minus navbar */
+    width: 100vw; /* Full width of the viewport */
+}
+
+/* Sidebar Styles */
+#plot-info {
+    width: 15%; /* Sidebar width set to 20% */
+    height: 100%; /* Full height */
+    padding: 10px; /* Reduced padding */
+    background-color: #ffffff; /* Match navbar color */
+    color: #000000;
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+/* Map Styles */
+.map-container {
+    display: flex;
+    flex: 1; /* Allow the map container to grow */
+}
+
+#map {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the map container */
+}
+
+/* Form Styles */
+#plot-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#plot-form label {
+    margin-top: 5px; /* Reduced margin */
+    font-weight: bold;
+    font-size: 12px; /* Reduced font size for labels */
+}
+
+#plot-form input[type="text"],
+#plot-form input[type="number"],
+#plot-form textarea,
+#plot-form select,
+#plot-form input[type="file"] {
+    width: 90%; /* Set width to 90% of the sidebar */
+    max-width: 250px; /* Set a maximum width for input fields */
+    padding: 5px; /* Reduced padding */
+    margin-top: 3px; /* Reduced margin */
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #ffffff; /* White background for inputs */
+    color: #000000; /* Black text for inputs */
+    font-size: 10px; /* Reduced font size for input fields */
+}
+
+/* Button Styles */
+#plot-form button {
+    margin-top: 10px; /* Reduced margin */
+    padding: 8px; /* Reduced padding */
+    background-color: #0056b3; /* Blue button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px; /* Reduced font size for buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    width: 90%;
+}
+
+#plot-form button:hover {
+    background-color: #004494; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Cancel Button Styles */
+#cancel-edit {
+    background-color: #f6ff00; /* Red for cancel */
+}
+
+#cancel-edit:hover {
+    background-color: #fff700; /* Darker red on hover */
+}
+
+/* Leaflet Popup Styles */
+.leaflet-popup-content {
+    font-size: 14px;
+}
+
+.leaflet-popup-content button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10px; /* Reduced font size for popup buttons */
+}
+
+.leaflet-popup-content button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.leaflet-popup-content button:last-child {
+    background-color: #f44336; /* Red */
+    margin-left: 5px;
+}
+
+.leaflet-popup-content button:last-child:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Map Controls Styles */
+.map-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.map-controls button {
+    background-color: #0056b3; /* Blue */
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.map-controls button:hover {
+    background-color: #004494; /* Darker blue on hover */
+}
+
+/* Sidebar Collapse Styles */
+.sidebar-collapsed #plot-info {
+    transform: translateX(-100%);
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 695px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #plot-info {    
+        width: 100%;
+        height: 80%;
+    }
+
+    #map {
+        height: 50%;
+    }
+
+    .sidebar-collapsed #map {
+        height: 100%;
+    }
+}
+
+.e1 {
+    color: #000000;
+    padding-bottom: 10px; /* Reduced padding */
+    font-size: 18px; /* Adjusted heading size */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.logo {
+    width: 100px; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between logo and heading */
+}
+.container {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center contents vertically */
+    width: 80%; /* Set width to 80% of the parent or a specific value */
+    max-width: 260px; /* Set a maximum width for the container */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: rgb(255, 255, 255); /* Semi-transparent black background */
+    border: 2px solid #000000; /* White stroke around the container */
+    border-radius: 30px; /* Increased border radius to 30px */
+    box-shadow: 0 0 15px rgb(0, 21, 249); /* Subtle shadow */
+    color: #000000; /* White text */
+}
+
+.container form {
+    width: 100%; /* Set form width to 100% of the container */
+    max-width: 400px; /* Set a maximum width for the form */
+    display: flex; /* Enable Flexbox for form items */
+    flex-direction: column; /* Stack form items vertically */
+    align-items: flex-start; /* Align form items to the left */
+}
+
+/* Start Generation Here */
+.background-image {
+    background-color: rgb(255, 255, 255); /* Semi-transparent black for the background image */
+}
+
+/* Styles for Login and Registration Pages */
+.container {
+    /* background-image: url('../data/1.png'); Correct path to 1.png */
+    background-size: contain; /* Ensure the image fits within the container */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center; /* Center the image */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgb(34, 0, 255); /* Subtle shadow */
+    color: #000000; /* White text */
+}
+
+.background-image {
+    /* background-image: url('../data/1.jpg'); Correct path to 1.jpg */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.container h2 {
+    text-align: center;
+    display: flex;
+    color: #000000; /* White text for headings */
+    justify-content: center;
+    margin: 1px;
+}
+
+.container form div {
+    margin-bottom: 10px;
+}
+
+.container form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px; /* Increased padding for better touch */
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 12px; /* Increased font size */
+    text-align: left; /* Align text to the left */
+}
+
+.container form button:hover {
+    background: linear-gradient(90deg, #0000ff, #ff0000); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Button Styles */
+.container form button {
+    width: 40%;
+    padding: 8px;
+    background: linear-gradient(90deg, #ff0000, #0000ff); /* Red to blue gradient */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px; /* Increased font size */
+    transition: background 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.container form p {
+    text-align: left; /* Center text */
+}
+
+.container form a {
+    color: #0056b3; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.container form a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* New Styles for Enhanced User Experience */
+.container form input:focus {
+    border-color: #0056b3; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.container form button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* New Styles for Remember Me Checkbox */
+.remember-me {
+    display: flex;
+    align-items: center; /* Aligns checkbox and label vertically */
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px; /* Adds space between checkbox and label */
+}
+
+#cord {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    position: absolute;
+    color: #000000;
+    left: 40%;
+    z-index: 99999;
+    bottom: 0;
+    font-weight: bold;
+}

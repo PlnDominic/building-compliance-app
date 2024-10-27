@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibiani Geospatial Webmap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='img/1.jpg') }}" alt="Logo" class="navbar-logo"> 
+        <div class="navbar-brand">Bibiani Anhwiaso Bekwai Municipal Assembly Development Permit Web Application</div>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#about">Edit</a>
+            <a href="#contact">Export</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    <div id="container">
+        <div id="plot-info">
+        <h2 id="form-title">Plot Information</h2>
+            <form id="plot-form">
+                <input type="hidden" id="plot-id" name="id">
+                <label for="plot-number">Plot Number:</label>
+                <input type="text" id="plot-number" name="plot_number" required>
+                
+                <label for="owner-name">Owner Name:</label>
+                <input type="text" id="owner-name" name="owner_name" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+                
+                <label for="area-sqm">Area (sq m):</label>
+                <input type="number" id="area-sqm" name="area_sqm" step="0.01">
+                
+                <label for="compliance-status">Compliance Status:</label>
+                <select id="compliance-status" name="compliance_status">
+                    <option value="compliant">Compliant</option>
+                    <option value="non-compliant">Non-Compliant</option>
+                    <option value="partial">Partial Compliance</option>
+                </select>
+                
+                <label for="land-use">Land Use:</label>
+                <input type="text" id="land-use" name="land_use">
+                
+                <label for="development-status">Development Status:</label>
+                <input type="text" id="development-status" name="development_status">
+                
+                <label for="additional-info">Additional Info:</label>
+                <textarea id="additional-info" name="additional_info"></textarea>
+                
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                
+                <button type="submit">Save Plot</button>
+                <button type="button" id="cancel-edit">Cancel</button>
+            </form>
+        </div>
+        <div class="map-container"> <!-- New container for the map -->
+            <div id="map">
+                <div id="cord"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/leaflet.browser.print.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

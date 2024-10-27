@@ -1,0 +1,84 @@
+2024-10-23 12:24:50,282 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 12:24:52,041 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 12:26:37,161 ERROR: Error saving shapefile: Input must be valid geometry objects: 0103000020e61000000100000005000000ab048bc3999f02c0200c3cf71ece19400c06d7dcd19f02c02672c119fccd194001de02098a9f02c04e637b2de8cd1940cec47421569f02c020d26f5f07ce1940ab048bc3999f02c0200c3cf71ece1940 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:402]
+Traceback (most recent call last):
+  File "C:\Users\KING EBEN\Desktop\building-compliance-app\app.py", line 384, in save_as_shapefile
+    gdf = gpd.GeoDataFrame({
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 209, in __init__
+    self.set_geometry(geometry, inplace=True, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 404, in set_geometry
+    level = _ensure_geometry(level, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 66, in _ensure_geometry
+    out = from_shapely(data, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\array.py", line 179, in from_shapely
+    raise TypeError(
+TypeError: Input must be valid geometry objects: 0103000020e61000000100000005000000ab048bc3999f02c0200c3cf71ece19400c06d7dcd19f02c02672c119fccd194001de02098a9f02c04e637b2de8cd1940cec47421569f02c020d26f5f07ce1940ab048bc3999f02c0200c3cf71ece1940
+2024-10-23 12:26:37,169 INFO: Plot created successfully: 11 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:257]
+2024-10-23 12:37:18,154 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 12:38:08,582 INFO: Plot updated successfully: 11 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:301]
+2024-10-23 12:39:18,536 ERROR: Error saving shapefile: Input must be valid geometry objects: 0103000020e6100000010000000500000032c7f2ae7aa002c036b1c05774cb194038bef6cc92a002c0309dd66d50cb194039d6c56d34a002c0865968e734cb19404ad3a0681ea002c01f8315a75acb194032c7f2ae7aa002c036b1c05774cb1940 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:407]
+Traceback (most recent call last):
+  File "C:\Users\KING EBEN\Desktop\building-compliance-app\app.py", line 389, in save_as_shapefile
+    gdf = gpd.GeoDataFrame({
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 209, in __init__
+    self.set_geometry(geometry, inplace=True, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 404, in set_geometry
+    level = _ensure_geometry(level, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\geodataframe.py", line 66, in _ensure_geometry
+    out = from_shapely(data, crs=crs)
+  File "C:\Users\KING EBEN\anaconda3\envs\geospatial_webmap\lib\site-packages\geopandas\array.py", line 179, in from_shapely
+    raise TypeError(
+TypeError: Input must be valid geometry objects: 0103000020e6100000010000000500000032c7f2ae7aa002c036b1c05774cb194038bef6cc92a002c0309dd66d50cb194039d6c56d34a002c0865968e734cb19404ad3a0681ea002c01f8315a75acb194032c7f2ae7aa002c036b1c05774cb1940
+2024-10-23 12:39:18,536 INFO: Plot created successfully: 12 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:257]
+2024-10-23 13:29:24,877 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 13:29:26,179 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 13:30:58,895 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 13:43:35,976 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 15:23:23,118 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 15:23:25,239 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 15:37:20,333 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-23 15:37:21,626 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-25 09:40:40,960 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-25 09:40:42,655 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-25 10:53:18,569 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-25 10:53:20,234 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:34]
+2024-10-25 11:27:37,549 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 11:27:55,690 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 12:39:14,705 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 12:39:16,057 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 12:49:42,841 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 12:50:06,142 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 12:50:51,582 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 14:51:43,747 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 14:52:01,158 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 14:52:20,025 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 15:32:28,946 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 15:32:30,669 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:35]
+2024-10-25 15:41:48,927 INFO: Polygon saved successfully: Polygon_1729870908 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 15:50:31,464 INFO: Polygon saved successfully: Polygon_1729871431 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 15:50:49,960 INFO: Polygon saved successfully: Polygon_1729871449 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 15:52:48,313 INFO: Plot updated successfully: 7 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:286]
+2024-10-25 16:01:50,664 INFO: Polygon saved successfully: Polygon_1729872110 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 16:04:19,163 INFO: Polygon saved successfully: Polygon_1729872259 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 16:04:31,690 INFO: Polygon saved successfully: Polygon_1729872271 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:337]
+2024-10-25 16:11:08,476 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 16:13:49,152 INFO: Polygon saved successfully: Polygon_1729872829 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:334]
+2024-10-25 16:15:40,548 INFO: Plot created successfully: 15 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:231]
+2024-10-25 16:36:17,010 INFO: Polygon saved successfully: Polygon_1729874177 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:334]
+2024-10-25 16:41:10,185 INFO: Plot deleted successfully: 10 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:298]
+2024-10-25 16:41:16,615 INFO: Plot deleted successfully: 15 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:298]
+2024-10-25 16:41:25,463 INFO: Plot deleted successfully: 12 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:298]
+2024-10-25 16:41:34,686 INFO: Plot deleted successfully: 11 [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:298]
+2024-10-25 16:48:51,274 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:23:33,646 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:28:30,063 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-25 17:28:52,011 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:32:17,443 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-25 17:34:22,419 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:34:32,811 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:41:40,122 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:38]
+2024-10-25 17:46:44,951 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-27 11:28:29,919 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-27 11:28:31,921 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-27 11:56:52,897 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]
+2024-10-27 11:56:55,448 INFO: Application startup [in C:\Users\KING EBEN\Desktop\building-compliance-app\app.py:39]

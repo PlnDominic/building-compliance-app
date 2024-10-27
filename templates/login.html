@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="app">
+    <!-- <div class="header">
+        <h1>Bibiani Anhwiaso Bekwai Municipal Assembly Physical Planning Database</h1>
+    </div> -->
+    <div class="background-image">
+        <div class="container">
+            <h1 class="e1">Bibiani Anhwiaso Bekwai Municipal Assembly Physical Planning</h1>
+            <img src="{{ url_for('static', filename='img/1.jpg') }}" alt="Logo" class="navbar-logos">   
+            <h2>Login</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32) }}<br>
+                </div>
+                <div>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32) }}<br>
+                </div>
+                <div class="remember-me">
+                    <label for="remember">Remember me</label>
+                    <input type="checkbox" id="remember">
+                </div>
+                <button type="submit"><strong>Login</strong></button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+        </div>
+    </div>
+</body>
+</html>
